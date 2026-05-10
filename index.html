@@ -1,0 +1,203 @@
+<!<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SRCC Film & Photography Club</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</head>
+<body>
+
+  <div class="loader">
+    <h1>SRCCFPC</h1>
+  </div>
+
+  <header>
+    <nav>
+      <div class="logo">SRCCFPC</div>
+
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#members">Members</a></li>
+        <li><a href="#activities">Activities</a></li>
+        <li><a href="#notice">Notice</a></li>
+        <li><a href="#gallery">Drive</a></li>
+        <li><a href="#join">Join</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="overlay"></div>
+
+    <video autoplay muted loop playsinline>
+      <source src="https://cdn.coverr.co/videos/coverr-a-man-recording-a-concert-with-a-camera-1561331796224?download=1080p" type="video/mp4">
+    </video>
+
+    <div class="hero-content">
+      <h1>SRCC Film & Photography Club</h1>
+      <p>Capturing Moments Beyond Time</p>
+      <button>Explore Club</button>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <h2>About SRCC Film & Photography Club</h2>
+
+    <div class="card-container">
+      <div class="card">
+        <h3>Club History</h3>
+        <p>
+          SRCC Film & Photography Club started with a dream of capturing stories, emotions and memories through cinematic visuals and photography.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Achievements</h3>
+        <p>
+          Photography contests, creative workshops, event coverage and visual storytelling achievements will be showcased here.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Special Moments</h3>
+        <p>
+          Important club memories, special events and unforgettable cinematic moments will be displayed here.
+        </p>
+      </div>
+    </div>
+
+    <h2 class="mini-title">Moderator & Mentors</h2>
+
+    <div class="card-container">
+      <div class="card member-card">
+        <img src="https://i.ibb.co/6XK6J3L/user.png" alt="mentor">
+        <h3>Moderator Name</h3>
+        <p>Club Moderator</p>
+      </div>
+
+      <div class="card member-card">
+        <img src="https://i.ibb.co/6XK6J3L/user.png" alt="mentor">
+        <h3>Senior Member</h3>
+        <p>Creative Mentor</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="members" id="members">
+    <h2>Club Members</h2>
+
+    <div class="card-container">
+      <div class="card member-card">
+        <img src="https://i.ibb.co/6XK6J3L/user.png" alt="member">
+        <h3>Fahim Hassan Apon</h3>
+        <p>Founder & Creative Director</p>
+      </div>
+
+      <div class="card member-card">
+        <img src="https://i.ibb.co/6XK6J3L/user.png" alt="member">
+        <h3>Member Name</h3>
+        <p>Executive Member</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="activities" id="activities">
+    <h2>Club Activities</h2>
+
+    <div class="activity-grid">
+      <div class="activity-box">Photo Walk</div>
+      <div class="activity-box">Workshops</div>
+      <div class="activity-box">Short Film</div>
+      <div class="activity-box">Competitions</div>
+    </div>
+  </section>
+
+  <section class="notice" id="notice">
+    <h2>Latest Notices</h2>
+
+    <div class="notice-box">
+      <h3>Photography Contest 2026</h3>
+      <p>
+        Submit your best cinematic captures before 20 June.
+      </p>
+    </div>
+
+    <div class="notice-box">
+      <h3>New Member Recruitment</h3>
+      <p>
+        Online registration is now open.
+      </p>
+    </div>
+  </section>
+
+  <section class="gallery" id="gallery">
+    <h2>Drive Archive</h2>
+
+    <input type="text" id="search" placeholder="Search program files..." />
+
+    <div class="gallery-grid">
+
+      <a href="https://drive.google.com/drive/folders/11lFgkknpC8xwspaENZwu5aeLGv0HJ9_0" target="_blank" class="gallery-item">
+    Alumni iftar 2026
+      </a>
+
+      <a href="https://drive.google.com/drive/folders/1nByFb5kwLmqW5Ud80nF7kDQB3Mryd_cQ" target="_blank" class="gallery-item">
+        Bncc orientation 2025
+      </a>
+
+      <a href="https://drive.google.com" target="_blank" class="gallery-item">
+        Event Coverage Album
+      </a>
+
+      <a href="https://drive.google.com" target="_blank" class="gallery-item">
+        Cinematic Documentary Project
+      </a>
+
+    </div>
+  </section>
+
+  <section class="join" id="join">
+    <h2>Join Our Club</h2>
+
+    <form>
+      <input type="text" placeholder="Full Name" required>
+      <input type="text" placeholder="Group" required>
+      <input type="text" placeholder="Section" required>
+      <input type="text" placeholder="Roll Number" required>
+      <input type="email" placeholder="Email Address" required>
+      <input type="text" placeholder="Phone Number" required>
+      <input type="text" placeholder="Facebook Account Name" required>
+      <input type="text" placeholder="Facebook Profile Link" required>
+      <input type="text" placeholder="Address" required>
+
+      <textarea placeholder="Why do you want to join?"></textarea>
+
+      <div class="rules-box">
+        <h3>Club Rules</h3>
+
+        <ul>
+          <li>Respect every club member.</li>
+          <li>Maintain discipline during programs.</li>
+          <li>Do not misuse club equipment.</li>
+          <li>Every member must stay active.</li>
+          <li>Photography ethics must be maintained.</li>
+          <li>Permission is required before publishing official content.</li>
+        </ul>
+      </div>
+
+      <button type="submit">Submit Application</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>Developed by <a href="https://linktr.ee/fahim.creator.16" target="_blank">Fahim Hassan Apon</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
