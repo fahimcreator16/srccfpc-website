@@ -1,203 +1,748 @@
-<!<!DOCTYPE html>
+<!-- =========================
+FILE: index.html
+========================= -->
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SRCC Film & Photography Club</title>
 
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<title>SRCC Film & Photography Club</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
 </head>
 <body>
 
-  <div class="loader">
-    <h1>SRCCFPC</h1>
-  </div>
+<!-- LOADER -->
 
-  <header>
-    <nav>
-      <div class="logo">SRCCFPC</div>
+<div class="loader">
 
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#members">Members</a></li>
-        <li><a href="#activities">Activities</a></li>
-        <li><a href="#notice">Notice</a></li>
-        <li><a href="#gallery">Drive</a></li>
-        <li><a href="#join">Join</a></li>
-      </ul>
-    </nav>
-  </header>
+<div class="loader-text">
+SRCCFPC
+</div>
 
-  <section class="hero" id="home">
-    <div class="overlay"></div>
+</div>
 
-    <video autoplay muted loop playsinline>
-      <source src="https://cdn.coverr.co/videos/coverr-a-man-recording-a-concert-with-a-camera-1561331796224?download=1080p" type="video/mp4">
-    </video>
+<!-- CURSOR -->
 
-    <div class="hero-content">
-      <h1>SRCC Film & Photography Club</h1>
-      <p>Capturing Moments Beyond Time</p>
-      <button>Explore Club</button>
-    </div>
-  </section>
+<div class="cursor"></div>
 
-  <section class="about" id="about">
-    <h2>About SRCC Film & Photography Club</h2>
+<!-- LIGHTS -->
 
-    <div class="card-container">
-      <div class="card">
-        <h3>Club History</h3>
-        <p>
-          SRCC Film & Photography Club started with a dream of capturing stories, emotions and memories through cinematic visuals and photography.
-        </p>
-      </div>
+<div class="light light1"></div>
+<div class="light light2"></div>
 
-      <div class="card">
-        <h3>Achievements</h3>
-        <p>
-          Photography contests, creative workshops, event coverage and visual storytelling achievements will be showcased here.
-        </p>
-      </div>
+<!-- HEADER -->
 
-      <div class="card">
-        <h3>Special Moments</h3>
-        <p>
-          Important club memories, special events and unforgettable cinematic moments will be displayed here.
-        </p>
-      </div>
-    </div>
+<header>
 
-    <h2 class="mini-title">Moderator & Mentors</h2>
+<nav>
 
-    <div class="card-container">
-      <div class="card member-card">
-        <img src="https://i.ibb.co/6XK6J3L/user.png" alt="mentor">
-        <h3>Moderator Name</h3>
-        <p>Club Moderator</p>
-      </div>
+<div class="logo-wrapper">
 
-      <div class="card member-card">
-        <img src="https://i.ibb.co/6XK6J3L/user.png" alt="mentor">
-        <h3>Senior Member</h3>
-        <p>Creative Mentor</p>
-      </div>
-    </div>
-  </section>
+<div class="logo-ring"></div>
 
-  <section class="members" id="members">
-    <h2>Club Members</h2>
+<img src="club.logo.png" class="club-logo">
 
-    <div class="card-container">
-      <div class="card member-card">
-        <img src="https://i.ibb.co/6XK6J3L/user.png" alt="member">
-        <h3>Fahim Hassan Apon</h3>
-        <p>Founder & Creative Director</p>
-      </div>
+</div>
 
-      <div class="card member-card">
-        <img src="https://i.ibb.co/6XK6J3L/user.png" alt="member">
-        <h3>Member Name</h3>
-        <p>Executive Member</p>
-      </div>
-    </div>
-  </section>
+<div class="menu-btn" id="menuBtn">
 
-  <section class="activities" id="activities">
-    <h2>Club Activities</h2>
+<i class="fa-solid fa-bars"></i>
 
-    <div class="activity-grid">
-      <div class="activity-box">Photo Walk</div>
-      <div class="activity-box">Workshops</div>
-      <div class="activity-box">Short Film</div>
-      <div class="activity-box">Competitions</div>
-    </div>
-  </section>
+</div>
 
-  <section class="notice" id="notice">
-    <h2>Latest Notices</h2>
+<ul id="navLinks">
 
-    <div class="notice-box">
-      <h3>Photography Contest 2026</h3>
-      <p>
-        Submit your best cinematic captures before 20 June.
-      </p>
-    </div>
+<li><a href="#home">Home</a></li>
 
-    <div class="notice-box">
-      <h3>New Member Recruitment</h3>
-      <p>
-        Online registration is now open.
-      </p>
-    </div>
-  </section>
+<li><a href="#about">About</a></li>
 
-  <section class="gallery" id="gallery">
-    <h2>Drive Archive</h2>
+<li><a href="#members">Members</a></li>
 
-    <input type="text" id="search" placeholder="Search program files..." />
+<li><a href="#activities">Activities</a></li>
 
-    <div class="gallery-grid">
+<li><a href="#notice">Notice</a></li>
 
-      <a href="https://drive.google.com/drive/folders/11lFgkknpC8xwspaENZwu5aeLGv0HJ9_0" target="_blank" class="gallery-item">
-    Alumni iftar 2026
-      </a>
+<li><a href="#drive">Drive</a></li>
 
-      <a href="https://drive.google.com/drive/folders/1nByFb5kwLmqW5Ud80nF7kDQB3Mryd_cQ" target="_blank" class="gallery-item">
-        Bncc orientation 2025
-      </a>
+<li><a href="#event">Event</a></li>
 
-      <a href="https://drive.google.com" target="_blank" class="gallery-item">
-        Event Coverage Album
-      </a>
+<li><a href="#tutorial">Tutorial</a></li>
 
-      <a href="https://drive.google.com" target="_blank" class="gallery-item">
-        Cinematic Documentary Project
-      </a>
+<li><a href="#task">Task</a></li>
 
-    </div>
-  </section>
+<li><a href="#join">Join</a></li>
 
-  <section class="join" id="join">
-    <h2>Join Our Club</h2>
+</ul>
 
-    <form>
-      <input type="text" placeholder="Full Name" required>
-      <input type="text" placeholder="Group" required>
-      <input type="text" placeholder="Section" required>
-      <input type="text" placeholder="Roll Number" required>
-      <input type="email" placeholder="Email Address" required>
-      <input type="text" placeholder="Phone Number" required>
-      <input type="text" placeholder="Facebook Account Name" required>
-      <input type="text" placeholder="Facebook Profile Link" required>
-      <input type="text" placeholder="Address" required>
+</nav>
 
-      <textarea placeholder="Why do you want to join?"></textarea>
+</header>
 
-      <div class="rules-box">
-        <h3>Club Rules</h3>
+<!-- HERO -->
 
-        <ul>
-          <li>Respect every club member.</li>
-          <li>Maintain discipline during programs.</li>
-          <li>Do not misuse club equipment.</li>
-          <li>Every member must stay active.</li>
-          <li>Photography ethics must be maintained.</li>
-          <li>Permission is required before publishing official content.</li>
-        </ul>
-      </div>
+<section class="hero" id="home">
 
-      <button type="submit">Submit Application</button>
-    </form>
-  </section>
+<video autoplay muted loop playsinline>
 
-  <footer>
-    <p>Developed by <a href="https://linktr.ee/fahim.creator.16" target="_blank">Fahim Hassan Apon</a></p>
-  </footer>
+<source src="your-video.mp4" type="video/mp4">
 
-  <script src="script.js"></script>
+</video>
+
+<div class="overlay"></div>
+
+<div class="hero-content">
+
+<div class="hero-logo-box">
+
+<div class="hero-ring"></div>
+
+<img src="club.logo.png"  class="hero-logo">
+
+</div>
+
+<h1 class="hero-title">
+SRCC Film & Photography Club
+</h1>
+
+<p class="hero-sub">
+Capturing Moments Beyond Time
+</p>
+
+<div class="counter-wrapper">
+
+<div class="counter-card">
+
+<h2 id="memberCounter">0</h2>
+
+<span>Members</span>
+
+</div>
+
+<div class="counter-card">
+
+<h2 id="eventCounter">0</h2>
+
+<span>Events</span>
+
+</div>
+
+</div>
+
+<div class="hero-buttons">
+
+<a href="#join" class="premium-btn">
+Join Club
+</a>
+
+<a href="#event" class="premium-btn">
+Explore Event
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<h2 class="section-title reveal">
+About Club
+</h2>
+
+<div class="grid">
+
+<div class="glass-card reveal">
+
+<h3>Club History</h3>
+
+<p>
+SRCC Film & Photography Club inspires students through cinematic storytelling, photography and creativity.
+</p>
+
+</div>
+
+<div class="glass-card reveal">
+
+<h3>Achievements</h3>
+
+<p>
+Photography contests, short films, workshops and creative event coverage.
+</p>
+
+</div>
+
+<div class="glass-card reveal">
+
+<h3>Special Moments</h3>
+
+<p>
+Unforgettable memories and cinematic club moments are showcased here.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- MEMBERS -->
+
+<section id="members">
+
+<h2 class="section-title reveal">
+Members
+</h2>
+
+<div class="grid">
+
+<a href="#"
+class="glass-card member-card reveal">
+
+<img src="https://i.ibb.co/6XK6J3L/user.png">
+
+<h3>Fahim Hassan Apon</h3>
+
+<p>Founder & Creative Director</p>
+
+</a>
+
+<a href="#"
+class="glass-card member-card reveal">
+
+<img src="https://i.ibb.co/6XK6J3L/user.png">
+
+<h3>Member Name</h3>
+
+<p>Executive Member</p>
+
+</a>
+
+</div>
+
+</section>
+
+<!-- ACTIVITIES -->
+
+<section id="activities">
+
+<h2 class="section-title reveal">
+Activities
+</h2>
+
+<div class="grid">
+
+<a href="https://google.com"
+target="_blank"
+class="activity-card reveal">
+
+Photo Walk
+
+</a>
+
+<a href="https://google.com"
+target="_blank"
+class="activity-card reveal">
+
+Workshop
+
+</a>
+
+<a href="https://google.com"
+target="_blank"
+class="activity-card reveal">
+
+Short Film
+
+</a>
+
+<a href="https://google.com"
+target="_blank"
+class="activity-card reveal">
+
+Event Coverage
+
+</a>
+
+</div>
+
+</section>
+
+<!-- NOTICE -->
+
+<section id="notice">
+
+<h2 class="section-title reveal">
+Latest Notice
+</h2>
+
+<div class="grid">
+
+<a href="#"
+class="glass-card reveal">
+
+<h3>Photography Contest 2026</h3>
+
+<p>
+Click to view details
+</p>
+
+</a>
+
+<a href="#"
+class="glass-card reveal">
+
+<h3>New Member Recruitment</h3>
+
+<p>
+Click to view details
+</p>
+
+</a>
+
+</div>
+
+</section>
+
+<!-- DRIVE -->
+
+<section id="drive">
+
+<h2 class="section-title reveal">
+Drive Archive
+</h2>
+
+<input type="text"
+placeholder="Search Files..."
+class="search-box reveal">
+
+<div class="grid">
+
+<a href="https://drive.google.com"
+target="_blank"
+class="glass-card reveal">
+
+Alumni Iftar 2026
+
+</a>
+
+<a href="https://drive.google.com"
+target="_blank"
+class="glass-card reveal">
+
+BNCC Orientation
+
+</a>
+
+<a href="https://drive.google.com"
+target="_blank"
+class="glass-card reveal">
+
+Photography Album
+
+</a>
+
+<a href="https://drive.google.com"
+target="_blank"
+class="glass-card reveal">
+
+Event Coverage
+
+</a>
+
+</div>
+
+</section>
+
+<!-- EVENT -->
+
+<section id="event">
+
+<h2 class="section-title reveal">
+Upcoming Event
+</h2>
+
+<div class="event-box reveal">
+
+<img src="event.jpg">
+
+<div class="event-content">
+
+<h3>
+Annual Photography Exhibition
+</h3>
+
+<p>
+Showcase your cinematic moments and photography masterpieces.
+</p>
+
+<span>
+Date: 25 June 2026
+</span>
+
+<div class="event-buttons">
+
+<a href="#"
+class="premium-btn">
+
+View Details
+
+</a>
+
+<a href="#"
+class="premium-btn">
+
+Gallery
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- INFORMATION -->
+
+<section>
+
+<h2 class="section-title reveal">
+Information
+</h2>
+
+<div class="accordion reveal">
+
+<div class="accordion-item">
+
+<div class="accordion-header">
+
+More Information
+
+<i class="fa-solid fa-chevron-down"></i>
+
+</div>
+
+<div class="accordion-content">
+
+<p>
+
+এখানে information লিখবা।
+Event details, notice details,
+tutorial information সব দিতে পারবা।
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- TUTORIAL -->
+
+<section id="tutorial">
+
+<h2 class="section-title reveal">
+Tutorial
+</h2>
+
+<div class="grid">
+
+<a href="#"
+class="glass-card reveal">
+
+Photography Basics
+
+</a>
+
+<a href="#"
+class="glass-card reveal">
+
+Cinematic Color Grading
+
+</a>
+
+</div>
+
+</section>
+
+<!-- TASK -->
+
+<section id="task">
+
+<h2 class="section-title reveal">
+Tasks
+</h2>
+
+<div class="grid">
+
+<a href="#"
+class="glass-card reveal">
+
+Weekly Photography Challenge
+
+</a>
+
+<a href="#"
+class="glass-card reveal">
+
+Documentary Assignment
+
+</a>
+
+</div>
+
+</section>
+
+<!-- JOIN -->
+
+<section id="join">
+
+<h2 class="section-title reveal">
+Join Our Club
+</h2>
+<section>
+
+<h2 class="section-title reveal">
+process
+</h2>
+
+<div class="accordion reveal">
+
+<div class="accordion-item">
+
+<div class="accordion-header">
+
+More Information
+
+<i class="fa-solid fa-chevron-down"></i>
+
+</div>
+
+<div class="accordion-content">
+
+<p>
+
+এখানে information লিখবা।
+Event details, notice details,
+tutorial information সব দিতে পারবা।
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<form 
+class="glass-form reveal"
+
+action="https://formspree.io/f/mqenwwgg"
+method="POST">
+
+<input 
+type="text"
+name="Full Name"
+placeholder="Full Name"
+required>
+
+<input 
+type="text"
+name="Group"
+placeholder="Group"
+required>
+
+<input 
+type="text"
+name="Section"
+placeholder="Section"
+required>
+
+<input 
+type="text"
+name="Roll Number"
+placeholder="Roll Number"
+required>
+
+<input 
+type="text"
+name="ID Number"
+placeholder="ID Number"
+required>
+
+<input 
+type="email"
+name="Email Address"
+placeholder="Email Address"
+required>
+
+<input 
+type="text"
+name="Phone Number"
+placeholder="Phone Number"
+required>
+
+<input 
+type="text"
+name="Payment Method"
+placeholder="Payment Method = Bkash/Nagad/Rocket"
+required>
+
+<input 
+type="text"
+name="Payment Amount"
+placeholder="Payment Amount"
+required>
+
+<input 
+type="text"
+name="Payment Number"
+placeholder="Payment Number"
+required>
+
+<input 
+type="text"
+name="Transaction ID"
+placeholder="Transaction ID"
+required>
+
+<textarea
+name="Why Join"
+placeholder="Why do you want to join?">
+</textarea>
+
+<!-- RULES -->
+
+<div class="accordion">
+
+<div class="accordion-item">
+
+<div class="accordion-header">
+
+Club Rules
+
+<i class="fa-solid fa-chevron-down"></i>
+
+</div>
+
+<div class="accordion-content">
+
+<p>
+
+1. Respect every member.<br><br>
+
+2. Maintain discipline.<br><br>
+
+3. Stay active in activities.<br><br>
+
+4. Submit tasks on time.<br><br>
+
+5. Maintain photography ethics.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<button 
+type="submit"
+class="submit-btn">
+
+Submit Application
+
+</button>
+
+</form>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<h2>
+Contact Us
+</h2>
+
+<div class="contact-box">
+
+<a href="mailto:srccfpcofficial@gmail.com">
+
+<i class="fa-solid fa-envelope"></i>
+
+srccfpcofficial@gmail.com
+
+</a>
+
+<a href="tel:01998028918">
+
+<i class="fa-solid fa-phone"></i>
+
+01998-028918
+
+</a>
+
+<a href="#">
+
+<i class="fa-solid fa-location-dot"></i>
+
+Shaheed Ramiz Uddin Cantonment College, Dhaka-1206
+
+</a>
+
+</div>
+
+<div class="socials">
+
+<a href="https://www.facebook.com/SRCCFPCofficial"
+target="_blank">
+
+<i class="fa-brands fa-facebook-f"></i>
+
+</a>
+
+<a href="https://www.instagram.com/srccfpc?igsh=emU3ZnQ1eGJkeXVx"
+target="_blank">
+
+<i class="fa-brands fa-instagram"></i>
+
+</a>
+
+</div>
+
+<p class="developer">
+Developed by <a href="https://linktr.ee/fahim.creator.16">Fahim Hassan Apon</a> 
+</p>
+
+</footer>
+
+<script src="script.js"></script>
+
 </body>
 </html>
