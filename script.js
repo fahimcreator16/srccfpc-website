@@ -58,9 +58,9 @@ clearInterval(timer);
 
 }
 
-counter("memberCounter",0,250,3000);
+counter("memberCounter",0,100,3000);
 
-counter("eventCounter",0,45,3000);
+counter("eventCounter",0,1,3000);
 
 // REVEAL
 
