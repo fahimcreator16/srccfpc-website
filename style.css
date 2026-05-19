@@ -647,3 +647,20 @@ margin-bottom:5px;
 color:#ccc;
 font-size:.95rem;
 }
+select{
+width:100%;
+padding:15px;
+border:none;
+outline:none;
+margin-bottom:20px;
+border-radius:15px;
+background:rgba(255,255,255,.08);
+color:white;
+backdrop-filter:blur(20px);
+font-size:1rem;
+}
+
+select option{
+background:#111;
+color:white;
+}
