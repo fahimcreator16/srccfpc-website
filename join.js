@@ -6,8 +6,8 @@
 */
 
 const CONFIG = {
-  GOOGLE_SCRIPT_URL: "PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE",
-  MAX_PHOTO_MB: 5
+  GOOGLE_SCRIPT_URL: "https://script.google.com/macros/s/AKfycbwS4gzDwnySsKy-6J_wCeDDDc_fcJLKKox6CnLVDJ2dMyewM_uc97dPFO9haalErYfc/exec",
+  MAX_PHOTO_MB: 10
 };
 
 const form = document.getElementById("membershipForm");
