@@ -254,3 +254,32 @@ footer{padding:35px 0 55px;text-align:center;color:#617087;font-size:10px;letter
   .glow-btn{width:calc(100% - 30px);margin-left:15px;margin-right:15px}
   .accordion-trigger,.terms-toggle{padding:18px}
 }
+
+
+/* Final customizations: supplied SRCCFPC logo + developer footer */
+.logo-brand {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 15px;
+  border: 1px solid rgba(255,255,255,.28);
+  background: rgba(255,255,255,.08);
+  box-shadow: 0 0 24px rgba(74,220,255,.28), inset 0 0 18px rgba(255,255,255,.06);
+}
+.logo-brand img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 5px;
+}
+footer a {
+  color: inherit;
+  text-decoration: none;
+  transition: color .25s ease, text-shadow .25s ease;
+}
+footer a:hover {
+  color: #73e8ff;
+  text-shadow: 0 0 14px rgba(115,232,255,.7);
+}
