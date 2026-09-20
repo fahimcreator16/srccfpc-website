@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#040404">
+  <title>Devices — SRCCFPC</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="devices-form.css">
+</head>
+<body data-page="devices-form" data-protected="true">
+
+  <!-- Ambient Background Layer -->
+  <div class="ambient-layer" aria-hidden="true">
+    <span class="ambient-orb ambient-orb--one"></span>
+    <span class="ambient-orb ambient-orb--two"></span>
+    <span class="ambient-orb ambient-orb--three"></span>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="index.html">
+        <img src="https://files.catbox.moe/vl3wpi.png" class="club-logo" style="height: 40px; vertical-align: middle; margin-right: 10px;" alt="SRCCFPC logo">
+        <span class="brand-copy"><strong>SRCC</strong><small>Film &amp; Photography Club</small></span>
+      </a>
+      
+      <button class="btn nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navDrawer">MENU</button>
+      
+      <nav class="nav-drawer" id="navDrawer">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="activities.html">Activities</a>
+        <a class="nav-link" href="event.html">Events</a>
+        <a class="nav-link" href="notice.html">Notices</a>
+        <a class="nav-link" href="member.html">Members</a>
+        <a class="nav-link" href="join.html">Join</a>
+        <a class="nav-link" href="log-sheet.html">Log Sheet</a>
+        <a class="nav-link" href="admin.html">Admin</a>
+        <button class="nav-action" id="logout" type="button">Logout</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Shell -->
+  <main class="page-shell">
+    <section class="hero reveal">
+      <div>
+        <div class="eyebrow">SRCCFPC PROTECTED MODULE</div>
+        <h1 class="hero-title">Devices</h1>
+        <p class="hero-copy">Secure, validated, synchronized club workflow.</p>
+      </div>
+    </section>
+
+    <section class="section glass-card reveal">
+      <div class="glass-content">
+        <form class="form-stack" data-api="devicesForm">
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="full_name">Name</label>
+              <input id="full_name" name="full_name" required>
+            </div>
+            <div class="form-field">
+              <label for="roll_number">Roll Number</label>
+              <input id="roll_number" name="roll_number" required>
+            </div>
+            <div class="form-field">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel">
+            </div>
+            <div class="form-field form-field--full">
+              <label>Operating System</label>
+              <div class="choice-row">
+                <label><input type="checkbox" name="operating_system" value="Android"> Android</label>
+                <label><input type="checkbox" name="operating_system" value="iOS"> iOS</label>
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="phone_company">Phone Company</label>
+              <input id="phone_company" name="phone_company" required>
+            </div>
+            <div class="form-field">
+              <label for="phone_model">Phone Model</label>
+              <input id="phone_model" name="phone_model" required>
+            </div>
+          </div>
+          <button class="btn glow-btn" type="submit">Submit Devices<span class="btn-loader"></span></button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    SRCC Film &amp; Photography Club | Developed by <a href="https://linktr.ee/fahim.creator.16" target="_blank" rel="noopener noreferrer">Fahim Hassan Apon</a>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Script -->
+  <script src="devices-form.js"></script>
+</body>
+</html>

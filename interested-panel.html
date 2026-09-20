@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#040404">
+  <title>Interested Panel — SRCCFPC</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="interested-panel.css">
+</head>
+<body data-page="interested-panel" data-protected="true">
+
+  <!-- Ambient Background Layer -->
+  <div class="ambient-layer" aria-hidden="true">
+    <span class="ambient-orb ambient-orb--one"></span>
+    <span class="ambient-orb ambient-orb--two"></span>
+    <span class="ambient-orb ambient-orb--three"></span>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="index.html">
+        <img src="https://files.catbox.moe/vl3wpi.png" class="club-logo" style="height: 40px; vertical-align: middle; margin-right: 10px;" alt="SRCCFPC logo">
+        <span class="brand-copy"><strong>SRCC</strong><small>Film &amp; Photography Club</small></span>
+      </a>
+      
+      <button class="btn nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navDrawer">MENU</button>
+      
+      <nav class="nav-drawer" id="navDrawer">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="activities.html">Activities</a>
+        <a class="nav-link" href="event.html">Events</a>
+        <a class="nav-link" href="notice.html">Notices</a>
+        <a class="nav-link" href="member.html">Members</a>
+        <a class="nav-link" href="join.html">Join</a>
+        <a class="nav-link" href="log-sheet.html">Log Sheet</a>
+        <a class="nav-link" href="admin.html">Admin</a>
+        <button class="nav-action" id="logout" type="button">Logout</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Shell -->
+  <main class="page-shell">
+    <section class="hero reveal">
+      <div>
+        <div class="eyebrow">SRCCFPC PROTECTED MODULE</div>
+        <h1 class="hero-title">Interested Panel</h1>
+        <p class="hero-copy">Secure, validated, synchronized club workflow.</p>
+      </div>
+    </section>
+
+    <section class="section glass-card reveal">
+      <div class="glass-content">
+        <form class="form-stack" data-api="interestedPanel">
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="full_name">Name</label>
+              <input id="full_name" name="full_name" required>
+            </div>
+            <div class="form-field">
+              <label for="roll_number">Roll Number</label>
+              <input id="roll_number" name="roll_number" required>
+            </div>
+            <div class="form-field">
+              <label for="mobile_number">Mobile Number</label>
+              <input id="mobile_number" name="mobile_number" type="tel" required>
+            </div>
+            
+            <div class="form-field form-field--full">
+              <label>Choice Interested Panel</label>
+              <div class="choice-grid">
+                <label><input type="checkbox" name="panel" value="Editorial Officer"> Editorial Officer</label>
+                <label><input type="checkbox" name="panel" value="IT Officer"> IT Officer</label>
+                <label><input type="checkbox" name="panel" value="Finance Officer"> Finance Officer</label>
+                <label><input type="checkbox" name="panel" value="PR Officer"> PR Officer</label>
+                <label><input type="checkbox" name="panel" value="Quality Assurance Officer"> Quality Assurance Officer</label>
+                <label><input type="checkbox" name="panel" value="Academic Assurance Officer"> Academic Assurance Officer</label>
+                <label><input type="checkbox" name="panel" value="Head of Film"> Head of Film</label>
+                <label><input type="checkbox" name="panel" value="Head of Photo"> Head of Photo</label>
+                <label><input type="checkbox" name="panel" value="Head of Administration"> Head of Administration</label>
+                <label><input type="checkbox" name="panel" value="Publishing Officer"> Publishing Officer</label>
+                <label><input type="checkbox" name="panel" value="Head of Operating Officer"> Head of Operating Officer</label>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="skill_level">Tomar ei panel er kaj kemon paro</label>
+              <select id="skill_level" name="skill_level" required>
+                <option value="">Select</option>
+                <option>Paro na</option>
+                <option>Olpo paro</option>
+                <option>Valoi paro</option>
+              </select>
+            </div>
+
+            <div class="form-field form-field--full">
+              <label for="reason">Tume keno ei panel gulo niye kaj korte cchaw</label>
+              <textarea id="reason" name="reason"></textarea>
+            </div>
+          </div>
+          
+          <button class="btn glow-btn" type="submit">Submit Interested Panel<span class="btn-loader"></span></button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    SRCC Film &amp; Photography Club | Developed by <a href="https://linktr.ee/fahim.creator.16" target="_blank" rel="noopener noreferrer">Fahim Hassan Apon</a>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Script -->
+  <script src="interested-panel.js"></script>
+</body>
+</html>

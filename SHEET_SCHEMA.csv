@@ -1,0 +1,13 @@
+Sheet Name,Required Columns
+Joining Process Table,"id,timestamp,roll_number,username,password_hash,full_name,email,phone_number,department_stream,section,collegeId,bloodGroup,gender,dob,address,facebook,whyJoin,payment_trx_id,payment_method,sender_number,verification_status"
+Login Details Table,"id,roll_number,username,password_hash,status,role"
+Personal Details Table,"profile_id,roll_number,full_name,email,phone_number,department_stream,section,collegeId,bloodGroup,gender,dob,address,facebook,whyJoin,payment_trx_id,payment_method,sender_number,verification_status,joined_at"
+Admin Details Table,"admin_id,username,password_hash,created_at,status"
+Interested Panel Details Table,"id,timestamp,roll_number,full_name,mobile_number,panel,skill_level,reason,status"
+Report Table,"id,timestamp,roll_number,full_name,category,details,status"
+Task Receive Table,"id,timestamp,roll_number,full_name,task_file_name,task_file_url,task_drive_link,notes,status"
+Event Join Details Table,"id,timestamp,roll_number,full_name,event_name,segment,experience,status"
+Response Table,"id,timestamp,roll_number,full_name,topic,outcome,presentation_file_name,presentation_file_url,presentation_drive_link,status"
+Device Details Table,"id,timestamp,roll_number,full_name,phone,operating_system,phone_company,phone_model,status"
+Log Sheet Details Table,"id,timestamp,roll_number,item,location,custodian,action,notes,status"
+Rejoin Table,"id,timestamp,roll_number,full_name,reason,status"

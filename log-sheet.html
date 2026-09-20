@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#040404">
+  <title>Lock Sheet — SRCCFPC</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="log-sheet.css">
+</head>
+<body data-page="log-sheet" data-protected="true">
+
+  <!-- Ambient Background Layer -->
+  <div class="ambient-layer" aria-hidden="true">
+    <span class="ambient-orb ambient-orb--one"></span>
+    <span class="ambient-orb ambient-orb--two"></span>
+    <span class="ambient-orb ambient-orb--three"></span>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="index.html" aria-label="SRCC Film & Photography Club home">
+        <img src="https://files.catbox.moe/vl3wpi.png" class="club-logo" style="height: 40px; vertical-align: middle; margin-right: 10px;" alt="SRCCFPC logo">
+        <span class="brand-copy"><strong>SRCC</strong><small>Film &amp; Photography Club</small></span>
+      </a>
+      
+      <button class="btn nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navDrawer">MENU</button>
+      
+      <nav class="nav-drawer" id="navDrawer" aria-label="Primary navigation">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="activities.html">Activities</a>
+        <a class="nav-link" href="event.html">Events</a>
+        <a class="nav-link" href="notice.html">Notices</a>
+        <a class="nav-link" href="member.html">Members</a>
+        <a class="nav-link" href="join.html">Join</a>
+        <a class="nav-link" href="log-sheet.html">Lock Sheet</a>
+        <a class="nav-link" href="admin.html">Admin</a>
+        <button class="nav-action" id="logout" type="button">Logout</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Shell -->
+  <main class="page-shell">
+    <section class="hero reveal">
+      <div>
+        <div class="eyebrow">PROTECTED INVENTORY CONTROL</div>
+        <h1 class="hero-title">Lock Sheet <span class="gradient-text">CRUD</span></h1>
+        <p class="hero-copy">Add, inspect, update and remove custody records with stable primary-key synchronization.</p>
+      </div>
+    </section>
+
+    <!-- Form & Live State Grid -->
+    <section class="section grid">
+      <article class="glass-card reveal">
+        <div class="glass-content">
+          <div class="eyebrow">WRITE</div>
+          <h2>Add Record</h2>
+          <form class="form-stack" id="logSheetForm">
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="logItem">Item</label>
+                <input id="logItem" name="item" required>
+              </div>
+              <div class="form-field">
+                <label for="logLocation">Location</label>
+                <input id="logLocation" name="location" required>
+              </div>
+              <div class="form-field">
+                <label for="logCustodian">Custodian</label>
+                <input id="logCustodian" name="custodian" required>
+              </div>
+              <div class="form-field">
+                <label for="logAction">Action</label>
+                <select id="logAction" name="action" required>
+                  <option value="">Select action</option>
+                  <option>Issued</option>
+                  <option>Returned</option>
+                  <option>Moved</option>
+                  <option>Checked</option>
+                  <option>Maintenance</option>
+                </select>
+              </div>
+              <div class="form-field form-field--full">
+                <label for="logNotes">Notes</label>
+                <textarea id="logNotes" name="notes" rows="4"></textarea>
+              </div>
+            </div>
+            <button class="btn glow-btn" type="submit">Add to Lock Sheet</button>
+          </form>
+        </div>
+      </article>
+
+      <article class="glass-card reveal">
+        <div class="glass-content">
+          <div class="eyebrow">LIVE STATE</div>
+          <h2 id="logCount">0 Records</h2>
+          <p class="muted">Every row has a stable ID. Update/Delete never trusts a stale spreadsheet row number.</p>
+          <button class="btn glow-btn" id="refreshLogSheet" type="button">Refresh Records</button>
+        </div>
+      </article>
+    </section>
+
+    <!-- Records Table Section -->
+    <section class="section glass-card reveal">
+      <div class="glass-content">
+        <div class="table-toolbar">
+          <div>
+            <div class="eyebrow">LOCK SHEET DATABASE</div>
+            <h2>Current Records</h2>
+          </div>
+          <input id="logSearch" class="table-search" type="search" placeholder="Search item, custodian, location...">
+        </div>
+        <div class="log-table-wrap">
+          <table class="log-table">
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>Item</th>
+                <th>Location</th>
+                <th>Custodian</th>
+                <th>Action</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="logTableBody">
+              <tr>
+                <td colspan="7" class="loading-text">Loading Lock Sheet records...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Edit Modal -->
+  <div class="modal" id="editLogModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-log-modal></div>
+    <div class="modal-card glass-panel">
+      <div class="modal-header">
+        <div>
+          <div class="eyebrow">ROW UPDATE</div>
+          <h2>Edit Lock Sheet Record</h2>
+        </div>
+        <button class="btn" type="button" data-close-log-modal>Close</button>
+      </div>
+      <form class="form-stack" id="editLogForm">
+        <input id="editLogId" type="hidden">
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="editLogItem">Item</label>
+            <input id="editLogItem" required>
+          </div>
+          <div class="form-field">
+            <label for="editLogLocation">Location</label>
+            <input id="editLogLocation" required>
+          </div>
+          <div class="form-field">
+            <label for="editLogCustodian">Custodian</label>
+            <input id="editLogCustodian" required>
+          </div>
+          <div class="form-field">
+            <label for="editLogAction">Action</label>
+            <select id="editLogAction" required>
+              <option>Issued</option>
+              <option>Returned</option>
+              <option>Moved</option>
+              <option>Checked</option>
+              <option>Maintenance</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="editLogStatus">Status</label>
+            <select id="editLogStatus">
+              <option>active</option>
+              <option>returned</option>
+              <option>maintenance</option>
+              <option>archived</option>
+            </select>
+          </div>
+          <div class="form-field form-field--full">
+            <label for="editLogNotes">Notes</label>
+            <textarea id="editLogNotes" rows="4"></textarea>
+          </div>
+        </div>
+        <button class="btn glow-btn" type="submit">Save Update</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    SRCC Film &amp; Photography Club | Developed by
+    <a href="https://linktr.ee/fahim.creator.16" target="_blank" rel="noopener noreferrer">Fahim Hassan Apon</a>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Script -->
+  <script src="log-sheet.js"></script>
+</body>
+</html>

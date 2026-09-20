@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Document Metadata -->
+    <meta charset="utf-8">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    >
+    <meta
+      name="description"
+      content="SRCC Film & Photography Club cinematic portal."
+    >
+    <meta name="theme-color" content="#040404">
+
+    <!-- Dynamic Page Title -->
+    <title>Event Registration — SRCCFPC</title>
+
+    <!-- Page Styles -->
+    <link rel="stylesheet" href="event-registration.css">
+  </head>
+
+  <body
+    data-page="event-registration"
+  >
+    <!-- Ambient Background -->
+    <div class="ambient-layer" aria-hidden="true">
+      <span class="ambient-orb ambient-orb--one"></span>
+      <span class="ambient-orb ambient-orb--two"></span>
+      <span class="ambient-orb ambient-orb--three"></span>
+    </div>
+
+<!-- Navigation Start -->
+<header class="site-header">
+  <div class="nav-shell">
+    <a
+      class="brand"
+      href="index.html"
+      aria-label="SRCCFPC Home"
+    ><img src="https://files.catbox.moe/vl3wpi.png" class="club-logo" style="height: 40px; vertical-align: middle; margin-right: 10px;" alt="SRCCFPC logo"><span class="brand-copy"><strong>SRCC</strong><small>Film &amp; Photography Club</small></span></a>
+
+    <!-- Mobile hamburger controller -->
+    <button
+      class="btn nav-toggle"
+      id="navToggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="navDrawer"
+    >
+      MENU
+    </button>
+
+    <!-- Navigation Drawer -->
+    <nav
+      class="nav-drawer"
+      id="navDrawer"
+      aria-label="Primary navigation"
+    >
+      <!-- Public Routes -->
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="about.html">About</a>
+      <a class="nav-link" href="activities.html">Activities</a>
+      <a class="nav-link" href="event.html">Events</a>
+      <a class="nav-link" href="notice.html">Notices</a>
+      <a class="nav-link" href="member.html">Members</a>
+      <a class="nav-link" href="join.html">Join</a>
+      <a class="nav-link" href="drive.html">Drive</a>
+
+      <!-- Protected Member Routes -->
+      <span class="protected-nav">
+        <a class="nav-link admin-nav-link" data-admin-only="true" href="admin.html">
+          Admin Panel
+        </a>
+        <a class="nav-link" href="member-detail.html">
+          Member Portal
+        </a>
+        <a class="nav-link" href="task.html">
+          Tasks
+        </a>
+        <a class="nav-link" href="member-drive.html">
+          Internal Drive
+        </a>
+        <a class="nav-link" href="task-tutorial.html">
+          Tutorials
+        </a>
+        <a class="nav-link" href="log-sheet.html">
+          Log Sheets
+        </a>
+        <a class="nav-link" href="member-notice.html">
+          Member Notices
+        </a>
+        <a class="nav-link" href="interested-panel.html">
+          Interested Panel
+        </a>
+        <a class="nav-link" href="inter-report.html">
+          Reports
+        </a>
+        <a class="nav-link" href="task-received.html">
+          Task Received
+        </a>
+        <a class="nav-link" href="member-event.html">
+          Member Events
+        </a>
+        <a class="nav-link" href="event-join.html">
+          Event Join
+        </a>
+        <a class="nav-link" href="responend.html">
+          Responses
+        </a>
+        <a class="nav-link" href="devices-form.html">
+          Devices
+        </a>
+        <a class="nav-link" href="rejoin-portal.html">
+          Rejoin Portal
+        </a>
+            <a class="nav-link" href="admin.html">
+          Admin Panel
+        </a>
+      </span>
+
+      <!-- Guest State -->
+      <span class="guest-only">
+        <a class="btn" href="login.html">Login</a>
+      </span>
+
+      <!-- Authenticated State -->
+      <span class="welcome-chip">
+        <span class="welcome-avatar">◆</span>
+        <span id="welcomeText">Member</span>
+      </span>
+
+      <button
+        class="nav-action protected-nav"
+        id="logout"
+        type="button"
+      >
+        Logout
+      </button>
+    </nav>
+  </div>
+</header>
+<!-- Navigation End -->
+
+
+    <!-- Main Content -->
+    <main class="page-shell">
+      
+      <!-- Event Registration Hero -->
+      <section class="hero reveal">
+        <div>
+          <div class="eyebrow">EVENT ACCESS</div>
+          <h1 class="hero-title">Register to Create.</h1>
+          <p class="hero-copy">
+            Submit event, media and payment verification information.
+          </p>
+        </div>
+      </section>
+
+      <!-- Event Registration -->
+      <section class="section glass-card reveal">
+        <div class="glass-content">
+          <form class="form-stack" data-api="eventRegistration">
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="full_name">Full Name</label>
+                <input id="full_name" name="full_name" required>
+              </div>
+
+              <div class="form-field">
+                <label for="roll_number">Roll / ID</label>
+                <input id="roll_number" name="roll_number" required>
+              </div>
+
+              <div class="form-field">
+                <label for="group_department">
+                  Group / Department
+                </label>
+                <input
+                  id="group_department"
+                  name="group_department"
+                  required
+                >
+              </div>
+
+              <div class="form-field">
+                <label for="contact_number">
+                  Contact Number
+                </label>
+                <input
+                  id="contact_number"
+                  name="contact_number"
+                  type="tel"
+                  required
+                >
+              </div>
+
+              <div class="form-field">
+                <label for="email">Email</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                >
+              </div>
+
+              <div class="form-field">
+                <label for="event_category">
+                  Event Category
+                </label>
+                <select
+                  id="event_category"
+                  name="event_category"
+                  required
+                >
+                  <option value="">Select category</option>
+                  <option value="Film Making">Film Making</option>
+                  <option value="Photography">Photography</option>
+                  <option value="Workshop">Workshop</option>
+                  <option value="Contest">Contest</option>
+                </select>
+              </div>
+
+              <div class="form-field form-field--full">
+                <label for="media_link">
+                  Media Submission / Google Drive Link
+                </label>
+                <input
+                  id="media_link"
+                  name="media_link"
+                  type="url"
+                >
+              </div>
+
+              <div class="form-field">
+                <label for="payment_method">
+                  Payment Method
+                </label>
+                <select
+                  id="payment_method"
+                  name="payment_method"
+                  required
+                >
+                  <option value="">Select method</option>
+                  <option value="bKash">bKash</option>
+                  <option value="Nagad">Nagad</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label for="sender_number">
+                  Payment Sender Number
+                </label>
+                <input
+                  id="sender_number"
+                  name="sender_number"
+                  type="tel"
+                  required
+                >
+              </div>
+
+              <div class="form-field form-field--full">
+                <label for="transaction_id">
+                  Transaction ID (TrxID)
+                </label>
+                <input
+                  id="transaction_id"
+                  name="transaction_id"
+                  required
+                >
+              </div>
+            </div>
+
+            <label class="muted">
+              <input type="checkbox" required>
+              I accept the event terms and confirm my submitted information.
+            </label>
+
+            <button class="btn" type="submit">
+              <span class="btn-label">Register for Event</span>
+              <span class="btn-loader"></span>
+            </button>
+          </form>
+        </div>
+      </section>
+        
+    </main>
+
+    <!-- Dynamic Footer -->
+    <footer class="site-footer">
+      SRCC Film &amp; Photography Club | Developed by <a href="https://linktr.ee/fahim.creator.16" target="_blank" rel="noopener noreferrer">Fahim Hassan Apon</a>
+      </a>
+    </footer>
+
+    <!-- Toast Notifications -->
+    <div
+      class="toast"
+      id="toast"
+      role="status"
+      aria-live="polite"
+    ></div>
+
+    <!-- Page JavaScript -->
+    <script src="event-registration.js"></script>
+  </body>
+</html>

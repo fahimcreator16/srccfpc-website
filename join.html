@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#08111f">
+  <title>SRCCFPC • Membership Registration</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="join.css">
+</head>
+<body>
+
+  <!-- Background Animated Lights -->
+  <div class="ambient" aria-hidden="true">
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+    <div class="orb orb-c"></div>
+    <div class="grid-glow"></div>
+    <div class="particles"></div>
+  </div>
+
+<!-- Navigation Start -->
+<header class="site-header">
+  <div class="nav-shell">
+    <a
+      class="brand"
+      href="index.html"
+      aria-label="SRCCFPC Home"
+    ><img src="https://files.catbox.moe/vl3wpi.png" class="club-logo" style="height: 40px; vertical-align: middle; margin-right: 10px;" alt="SRCCFPC logo"><span class="brand-copy"><strong>SRCC</strong><small>Film &amp; Photography Club</small></span></a>
+
+    <!-- Mobile hamburger controller -->
+    <button
+      class="btn nav-toggle"
+      id="navToggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="navDrawer"
+    >
+      MENU
+    </button>
+
+    <!-- Navigation Drawer -->
+    <nav
+      class="nav-drawer"
+      id="navDrawer"
+      aria-label="Primary navigation"
+    >
+      <!-- Public Routes -->
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="about.html">About</a>
+      <a class="nav-link" href="activities.html">Activities</a>
+      <a class="nav-link" href="event.html">Events</a>
+      <a class="nav-link" href="notice.html">Notices</a>
+      <a class="nav-link" href="member.html">Members</a>
+      <a class="nav-link" href="join.html">Join</a>
+      <a class="nav-link" href="drive.html">Drive</a>
+
+      <!-- Protected Member Routes -->
+      <span class="protected-nav">
+        <a class="nav-link admin-nav-link" data-admin-only="true" href="admin.html">
+          Admin Panel
+        </a>
+        <a class="nav-link" href="member-detail.html">
+          Member Portal
+        </a>
+        <a class="nav-link" href="task.html">
+          Tasks
+        </a>
+        <a class="nav-link" href="member-drive.html">
+          Internal Drive
+        </a>
+        <a class="nav-link" href="task-tutorial.html">
+          Tutorials
+        </a>
+        <a class="nav-link" href="log-sheet.html">
+          Log Sheets
+        </a>
+        <a class="nav-link" href="member-notice.html">
+          Member Notices
+        </a>
+        <a class="nav-link" href="interested-panel.html">
+          Interested Panel
+        </a>
+        <a class="nav-link" href="inter-report.html">
+          Reports
+        </a>
+        <a class="nav-link" href="task-received.html">
+          Task Received
+        </a>
+        <a class="nav-link" href="member-event.html">
+          Member Events
+        </a>
+        <a class="nav-link" href="event-join.html">
+          Event Join
+        </a>
+        <a class="nav-link" href="responend.html">
+          Responses
+        </a>
+        <a class="nav-link" href="devices-form.html">
+          Devices
+        </a>
+        <a class="nav-link" href="rejoin-portal.html">
+          Rejoin Portal
+        </a>
+            <a class="nav-link" href="admin.html">
+          Admin Panel
+        </a>
+      </span>
+
+      <!-- Guest State -->
+      <span class="guest-only">
+        <a class="btn" href="login.html">Login</a>
+      </span>
+
+      <!-- Authenticated State -->
+      <span class="welcome-chip">
+        <span class="welcome-avatar">◆</span>
+        <span id="welcomeText">Member</span>
+      </span>
+
+      <button
+        class="nav-action protected-nav"
+        id="logout"
+        type="button"
+      >
+        Logout
+      </button>
+    </nav>
+  </div>
+</header>
+<!-- Navigation End -->
+
+
+  <main id="join" class="page-shell">
+
+    <!-- Hero Section -->
+    <section class="hero reveal">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="pulse-dot"></span> MEMBERSHIP </span>
+        <h1>Become part of the<br><em>creative frame.</em></h1>
+        <p>Complete the form below to apply for membership of SRCC Film &amp; Photography Club.</p>
+
+        <div class="hero-pills">
+          <span>🎬 Film</span>
+          <span>📷 Photography</span>
+          <span>✨ Community</span>
+        </div>
+      </div>
+
+      <div class="hero-art glass-panel">
+        <div class="art-glow"></div>
+        <img src="https://files.catbox.moe/lvwac5.jpg" alt="Cinematic illustration">
+        <div class="art-caption">
+          <span>CREATE</span>
+          <strong>CAPTURE</strong>
+          <span>CONNECT</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Instructions Accordion -->
+    <section class="info-card glass-panel reveal" id="instructions">
+      <button class="accordion-trigger" type="button" aria-expanded="false">
+        <span>
+          <small>BEFORE YOU APPLY</small>
+          <strong>Registration &amp; Joining Instructions</strong>
+        </span>
+        <span class="accordion-icon">+</span>
+      </button>
+
+      <div class="accordion-content">
+        <ol class="instruction-list">
+          <li><b>Fill Out the Form:</b> Complete the registration form below by providing accurate information.</li>
+          <li>
+            <b>Complete Payment:</b> Please complete your payment prior to submitting the registration form.
+            <div class="payment-note">
+              <div><b>bKash — Send Money:</b> +8801764234980</div>
+              <div><b>Nagad — Send Money:</b> +8801624082986</div>
+              <div><b>Reference:</b> Write your <b>Name and Roll Number</b> in the transaction reference field.</div>
+            </div>
+          </li>
+          <li><b>Registration Fee:</b> 350 BDT only.</li>
+          <li><b>Transaction ID Verification:</b> Enter the received Transaction ID before final submission.</li>
+          <li><b>Read Club Rules &amp; Terms:</b> Read and agree to the membership terms before applying.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Registration Form -->
+    <section class="form-wrap reveal">
+      <div class="section-heading">
+        <span class="eyebrow">APPLICATION FORM</span>
+        <h2>Membership <em>Registration</em></h2>
+        <p>Fields marked <span>*</span> are required.</p>
+      </div>
+
+      <form id="membershipForm" class="glass-form" novalidate>
+
+        <div class="charged-ring ring-1"></div>
+        <div class="charged-ring ring-2"></div>
+        <div class="charged-ring ring-3"></div>
+
+        <!-- Section 01: Account Credentials -->
+        <div class="form-section">
+          <div class="form-section-title">
+            <span class="section-number">01</span>
+            <div><b>Account credentials</b><small>Create login details for member portal</small></div>
+          </div>
+
+          <div class="field-grid">
+            <label class="field">
+              <span>Username <i>*</i></span>
+              <input name="username" type="text" autocomplete="username" placeholder="Min 7 chars (Must include a-z & 0-9) " required>
+              <small class="error"></small>
+            </label>
+
+            <label class="field">
+              <span>Password <i>*</i></span>
+              <div class="password-wrapper" style="position: relative; display: flex; align-items: center;">
+                <input name="password" id="passwordInput" type="password" autocomplete="new-password" placeholder="Min 8 chars (Must include a-z, 0-9 & @#$)" required style="padding-right: 45px; width: 100%;">
+                <span id="togglePassword" style="position: absolute; right: 15px; cursor: pointer; user-select: none; font-size: 16px;">👁️</span>
+              </div>
+              <small class="error"></small>
+            </label>
+          </div>
+        </div>
+
+        <!-- Section 02: Personal Details -->
+        <div class="form-section">
+          <div class="form-section-title">
+            <span class="section-number">02</span>
+            <div><b>Personal details</b><small>Tell us who you are</small></div>
+          </div>
+
+          <div class="field-grid">
+            <label class="field full">
+              <span>Full name <i>*</i></span>
+              <input name="fullName" type="text" autocomplete="name" placeholder="Your full name" required>
+              <small class="error"></small>
+            </label>
+
+            <label class="field full">
+              <span>Address <i>*</i></span>
+              <textarea name="address" rows="3" placeholder="Your present address" required></textarea>
+              <small class="error"></small>
+            </label>
+
+            <fieldset class="choice-field">
+              <legend>Gender <i>*</i></legend>
+              <div class="choices">
+                <label><input type="radio" name="gender" value="Male" required><span>Male</span></label>
+                <label><input type="radio" name="gender" value="Female"><span>Female</span></label>
+                <label><input type="radio" name="gender" value="Other"><span>Other</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="choice-field">
+              <legend>Blood group <i>*</i></legend>
+              <div class="choices choices-wrap">
+                <label><input type="radio" name="bloodGroup" value="A+" required><span>A+</span></label>
+                <label><input type="radio" name="bloodGroup" value="A-"><span>A−</span></label>
+                <label><input type="radio" name="bloodGroup" value="B+"><span>B+</span></label>
+                <label><input type="radio" name="bloodGroup" value="B-"><span>B−</span></label>
+                <label><input type="radio" name="bloodGroup" value="AB+"><span>AB+</span></label>
+                <label><input type="radio" name="bloodGroup" value="AB-"><span>AB−</span></label>
+                <label><input type="radio" name="bloodGroup" value="O+"><span>O+</span></label>
+                <label><input type="radio" name="bloodGroup" value="O-"><span>O−</span></label>
+              </div>
+            </fieldset>
+
+            <label class="field">
+              <span>Date of birth <i>*</i></span>
+              <input name="dob" type="date" required>
+              <small class="error"></small>
+            </label>
+
+            <label class="field">
+              <span>Roll number <i>*</i></span>
+              <input name="rollNumber" type="text" inputmode="numeric" placeholder="e.g. 1234" required>
+              <small class="error"></small>
+            </label>
+
+            <label class="field">
+              <span>College ID <small class="optional">Optional</small></span>
+              <input name="collegeId" type="text" placeholder="College ID">
+            </label>
+
+            <fieldset class="choice-field full">
+              <legend>Group <i>*</i></legend>
+              <div class="choices">
+                <label><input type="radio" name="group" value="Science" required><span>Science</span></label>
+                <label><input type="radio" name="group" value="Humanities"><span>Humanities</span></label>
+                <label><input type="radio" name="group" value="Business Studies"><span>Business Studies</span></label>
+              </div>
+            </fieldset>
+
+            <label class="field">
+              <span>Section <i>*</i></span>
+              <input name="section" type="text" placeholder="Your section" required>
+              <small class="error"></small>
+            </label>
+
+            <label class="field">
+              <span>Mobile number <i>*</i></span>
+              <input name="mobile" type="tel" inputmode="tel" autocomplete="tel" placeholder="01XXXXXXXXX" required>
+              <small class="error"></small>
+            </label>
+
+            <label class="field">
+              <span>Email address <i>*</i></span>
+              <input name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+              <small class="error"></small>
+            </label>
+
+            <label class="field">
+              <span>Facebook profile URL <i>*</i></span>
+              <input name="facebook" type="url" placeholder="https://facebook.com/..." required>
+              <small class="error"></small>
+            </label>
+          </div>
+        </div>
+
+        <!-- Section 03: Photo Upload -->
+        <div class="form-section">
+          <div class="form-section-title">
+            <span class="section-number">03</span>
+            <div><b>Your photo</b><small>Upload a clear profile photo</small></div>
+          </div>
+
+          <label class="upload-box" id="uploadBox">
+            <input id="photo" name="photo" type="file" accept="image/*" required>
+            <div class="upload-icon">↑</div>
+            <strong>Drop your photo here</strong>
+            <span>or click to browse • JPG, PNG, WEBP • max 10MB</span>
+            <div class="preview-wrap" id="previewWrap">
+              <img id="photoPreview" alt="Photo preview">
+              <button id="removePhoto" type="button" aria-label="Remove photo">×</button>
+            </div>
+          </label>
+          <small class="field-error" id="photoError"></small>
+        </div>
+
+        <!-- Section 04: Payment Details -->
+        <div class="form-section">
+          <div class="form-section-title">
+            <span class="section-number">04</span>
+            <div><b>Payment verification</b><small>350 BDT membership fee</small></div>
+          </div>
+
+          <fieldset class="choice-field full">
+            <legend>Payment method <i>*</i></legend>
+            <div class="choices">
+              <label><input type="radio" name="paymentMethod" value="bKash" required><span>bKash</span></label>
+              <label><input type="radio" name="paymentMethod" value="Nagad"><span>Nagad</span></label>
+            </div>
+          </fieldset>
+
+          <div class="payment-number-grid">
+            <div class="method-card"><span>bKash • Send Money</span><b>+8801764234980</b></div>
+            <div class="method-card"><span>Nagad • Send Money</span><b>+8801624082986</b></div>
+          </div>
+
+          <div class="field-grid">
+            <label class="field">
+              <span>Payment number <i>*</i></span>
+              <input name="paymentNumber" type="tel" inputmode="tel" placeholder="Number used for payment" required>
+              <small class="error"></small>
+            </label>
+
+            <label class="field">
+              <span>Transaction ID <i>*</i></span>
+              <input name="transactionId" type="text" placeholder="Enter TrxID" required>
+              <small class="error"></small>
+            </label>
+          </div>
+        </div>
+
+        <!-- Section 05: Interest & Motivation -->
+        <div class="form-section">
+          <div class="form-section-title">
+            <span class="section-number">05</span>
+            <div><b>About your interest</b><small>Optional</small></div>
+          </div>
+
+          <label class="field full">
+            <span>Why do you want to join?</span>
+            <textarea name="whyJoin" rows="5" maxlength="1000" placeholder="Tell us briefly what you hope to learn, create or contribute..."></textarea>
+            <div class="char-count"><span id="charCount">0</span>/1000</div>
+          </label>
+        </div>
+
+        <!-- Terms & Conditions -->
+        <div class="terms-section">
+          <button class="terms-toggle" type="button" aria-expanded="false">
+            <span>
+              <small>REQUIRED READING</small>
+              <strong>Membership Terms</strong>
+            </span>
+            <span class="accordion-icon">+</span>
+          </button>
+
+          <div class="terms-content">
+            <p>Please read these terms carefully before officially joining our SRCCFPC family. These terms can be changed and updated due to undeniable reasons.</p>
+
+            <ol class="terms-list">
+              <li><b>Club Name:</b> The club shall be called the SRCC Film &amp; Photography Club.</li>
+              <li><b>Group &amp; page objectives:</b> Never SEENZONE our official group. Try to Respond to every single text. Always do like, comment and share every post from our official page.</li>
+              <li><b>Privacy:</b> DO NOT share any photo to any outsider from the club without the CLUB'S OFFICIAL LOGO. Do not leak any information of our club.</li>
+              <li><b>Respect:</b> Respect your seniors and be humble with your batchmates.</li>
+              <li><b>Responsibilities:</b> Every task that is related to the club, will require the senior's permission.</li>
+              <li><b>Academic activities:</b> Everyone is responsible for their own academic results.</li>
+              <li><b>Club rejoining:</b> If you leave our club and then want to rejoin, you have to pay rejoining fees.</li>
+              <li><b>Development allowance:</b> Club members are obliged to pay whatever expenses are required for the development of the club.</li>
+              <li><b>Power structure:</b> Executive member can give his opinion on any decision. Executive have 1 star power. Mentor have 3 star power. Copyright holder have 4 star power. Moderator and Co moderator have 5 star power.</li>
+              <li><b>Club materials:</b> If any club-related materials or information are shared outside without prior permission, a fine will be imposed.</li>
+            </ol>
+          </div>
+
+          <label class="agree-row">
+            <input type="checkbox" id="agreeTerms" required>
+            <span class="custom-check"></span>
+            <span>I have read, understood and agree to follow the Membership Terms. <i>*</i></span>
+          </label>
+          <small class="field-error" id="termsError"></small>
+        </div>
+
+        <button class="submit-btn glow-btn" id="submitBtn" type="submit">
+          <span class="btn-shine"></span>
+          <span class="btn-text">Submit Membership Application</span>
+          <span class="btn-loader" aria-hidden="true"></span>
+          <span class="btn-arrow">→</span>
+        </button>
+
+        <p class="form-status" id="formStatus" role="status"></p>
+      </form>
+    </section>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal" aria-hidden="true">
+      <div class="modal-backdrop"></div>
+      <div class="success-card glass-panel">
+        <div class="success-icon">✓</div>
+        <span class="eyebrow">APPLICATION RECEIVED</span>
+        <h2>Welcome to the <em>frame.</em></h2>
+        <p>Your membership application has been submitted successfully. Keep your Transaction ID for future reference.</p>
+        <button class="glow-btn modal-close" type="button">Done</button>
+      </div>
+    </div>
+
+    <footer>
+      <span>SRCC Film &amp; Photography Club</span>
+      <span>•</span>
+      <span>Developed by <a href="https://linktr.ee/fahim.creator.16" target="_blank" rel="noopener">Fahim Hassan Apon</a></span>
+    </footer>
+  </main>
+
+  <script src="join.js"></script>
+</body>
+</html>

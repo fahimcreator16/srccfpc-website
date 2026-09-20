@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#03050a">
+  <meta name="description" content="SRCC Film & Photography Club Secure Admin Command Center">
+  <title>SRCCFPC • Admin Command Center</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <!-- Ambient Cinematic Background Effects -->
+  <div class="ambient" aria-hidden="true">
+    <div class="ambient-grid"></div>
+    <div class="ambient-orbit ambient-orbit--one"></div>
+    <div class="ambient-orbit ambient-orbit--two"></div>
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+    <div class="orb orb-c"></div>
+    <div class="scanline"></div>
+  </div>
+
+  <!-- 1. PREMIUM LOGIN OVERLAY -->
+  <section class="login-wrapper" id="loginScreen">
+    <div class="login-shell">
+      <div class="login-decoration login-decoration--one"></div>
+      <div class="login-decoration login-decoration--two"></div>
+
+      <div class="login-card glass-panel">
+        <div class="login-brand">
+          <div class="logo-frame glow-pulse">
+            <img src="https://files.catbox.moe/vl3wpi.png" class="club-logo" alt="SRCCFPC logo">
+          </div>
+          <div>
+            <span class="eyebrow">SRCCFPC • SECURE GATEWAY</span>
+            <h1>Command Portal</h1>
+          </div>
+        </div>
+
+        <p class="login-subtitle">Authenticate with master administrator credentials to access system databases and manage club assets.</p>
+
+        <div class="security-status">
+          <span class="status-dot"></span>
+          <span>Encrypted Session Protocol Active</span>
+        </div>
+
+        <form id="adminLoginForm" onsubmit="handleAdminLogin(event)">
+          <label class="field">
+            <span>Admin Username</span>
+            <div class="input-wrap">
+              <span class="input-icon">◉</span>
+              <input id="adminUser" type="text" placeholder="Enter username" required autocomplete="username">
+            </div>
+          </label>
+
+          <label class="field" style="margin-top: 16px;">
+            <span>Admin Password</span>
+            <div class="input-wrap">
+              <span class="input-icon">◆</span>
+              <input id="adminPass" type="password" placeholder="Enter password" required autocomplete="current-password">
+              <button class="input-action" id="togglePassword" type="button" onclick="togglePasswordVisibility()">Show</button>
+            </div>
+          </label>
+
+          <button class="glow-btn glow-btn--primary glow-btn--wide" id="loginButton" type="submit">
+            <span class="button-icon">↳</span>
+            <span>Authenticate Securely</span>
+            <span class="button-sheen"></span>
+          </button>
+
+          <p id="loginStatus" class="status-msg" aria-live="polite"></p>
+        </form>
+
+        <div class="login-footer">
+          <span>Protected Administration Console</span>
+          <span class="login-pulse"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. MAIN ADMIN DASHBOARD -->
+  <section id="adminDashboard" class="admin-shell" style="display: none;">
+    <header class="topbar glass-panel">
+      <a class="brand" href="index.html">
+        <div class="logo-frame logo-frame--small">
+          <img src="https://files.catbox.moe/vl3wpi.png" class="club-logo" alt="SRCCFPC logo">
+        </div>
+        <span class="brand-copy">
+          <strong>SRCCFPC</strong>
+          <small>Film &amp; Photography Club</small>
+        </span>
+      </a>
+
+      <div class="topbar-center">
+        <span class="live-indicator"><i></i> LIVE ADMIN SESSION</span>
+      </div>
+
+      <div class="top-actions">
+        <button class="glow-btn glow-btn--violet" type="button" onclick="openAddAdminModal()">
+          <span>➕</span> Add New Admin
+        </button>
+        <button class="glow-btn glow-btn--cyan" id="refreshBtn" type="button" onclick="loadAllData()">
+          <span>↻</span> Refresh Database
+        </button>
+        <button class="glow-btn glow-btn--danger" type="button" onclick="handleLogout()">
+          <span>⇥</span> Logout
+        </button>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero-heading">
+        <div>
+          <span class="eyebrow">DATABASE CONTROL CENTER</span>
+          <h2>System <span>Workspaces</span></h2>
+          <p>Access all database sheets dynamically, approve pending memberships, and edit club records.</p>
+        </div>
+        <div class="hero-status glass-card">
+          <span class="hero-status-dot"></span>
+          <div>
+            <strong>Cloud Database Live</strong>
+            <small>All Sheets Synced</small>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats Grid -->
+      <section class="stats-grid">
+        <article class="stat-card glass-panel stat-card--pink">
+          <div class="card-glow"></div>
+          <div class="stat-icon">⌁</div>
+          <small>Pending Approvals</small>
+          <strong id="pendingCount">0</strong>
+          <span class="stat-line"></span>
+        </article>
+
+        <article class="stat-card glass-panel stat-card--green">
+          <div class="card-glow"></div>
+          <div class="stat-icon">✦</div>
+          <small>Active Members</small>
+          <strong id="activeCount">0</strong>
+          <span class="stat-line"></span>
+        </article>
+
+        <article class="stat-card glass-panel stat-card--cyan">
+          <div class="card-glow"></div>
+          <div class="stat-icon">▦</div>
+          <small>Total Sheets / Admins</small>
+          <strong id="tablesCount">0</strong>
+          <span class="stat-line"></span>
+        </article>
+      </section>
+
+      <!-- Controls & Dynamic Dynamic Tabs Container -->
+      <section class="controls-bar glass-panel">
+        <div class="controls-heading">
+          <span class="eyebrow">DATABASE WORKSPACES</span>
+          <strong>Select Sheet Table</strong>
+        </div>
+
+        <!-- dynamic tab buttons are generated here by admin.js -->
+        <div class="tabs" id="dynamicTabsNav">
+          <div class="loading-tab-placeholder">Fetching Database Tables...</div>
+        </div>
+
+        <div class="search-box">
+          <span class="search-icon">⌕</span>
+          <input id="searchInput" type="search" placeholder="Search Roll, Phone, Name, Email..." oninput="handleSearch()" autocomplete="off">
+          <kbd>/</kbd>
+        </div>
+      </section>
+
+      <!-- Dynamic Data Tables Card -->
+      <section class="table-card glass-panel">
+        <div class="table-heading">
+          <div>
+            <span class="eyebrow" id="currentWorkspaceLabel">LIVE WORKSPACE</span>
+            <h2 id="currentWorkspaceTitle">Sheet Records</h2>
+            <p>Full database views, instant filters, actions and live modification controls.</p>
+          </div>
+        </div>
+
+        <div class="table-scroll" id="dynamicTableContainer">
+          <div class="loading-text">Connecting to database...</div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>SRCC Film &amp; Photography Club</span>
+      <span class="footer-separator">•</span>
+      <span>Developed by <a href="https://linktr.ee/fahim.creator.16" target="_blank" rel="noopener noreferrer">Fahim Hassan Apon</a></span>
+    </footer>
+  </section>
+
+  <!-- MODAL 1: ADD NEW ADMIN -->
+  <div class="modal" id="addAdminModal" aria-hidden="true">
+    <div class="modal-backdrop" onclick="closeAddAdminModal()"></div>
+    <div class="modal-card glass-panel">
+      <div class="modal-header">
+        <div>
+          <span class="eyebrow">AUTHENTICATION MANAGER</span>
+          <h2>Add New Admin</h2>
+          <p>Create secure administrative credentials for team members.</p>
+        </div>
+        <button class="icon-close" type="button" onclick="closeAddAdminModal()">×</button>
+      </div>
+
+      <form onsubmit="saveNewAdmin(event)">
+        <div class="edit-grid">
+          <label class="field field--modal" style="grid-column: 1 / -1;">
+            <span>New Admin Username</span>
+            <input type="text" id="newAdminUser" placeholder="Enter username" required>
+          </label>
+          <label class="field field--modal" style="grid-column: 1 / -1;">
+            <span>New Admin Password</span>
+            <input type="password" id="newAdminPass" placeholder="Enter password" required>
+          </label>
+        </div>
+
+        <div class="modal-actions">
+          <button class="glow-btn glow-btn--ghost" type="button" onclick="closeAddAdminModal()">Cancel</button>
+          <button class="glow-btn glow-btn--primary" id="saveAdminBtn" type="submit">
+            <span>✓</span> Create Account
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL 2: FULL RECORD DETAILS DOSSIER -->
+  <div class="modal" id="viewModal" aria-hidden="true">
+    <div class="modal-backdrop" onclick="closeViewModal()"></div>
+    <div class="modal-card glass-panel modal-lg">
+      <div class="modal-header">
+        <div>
+          <span class="eyebrow">RECORD DOSSIER</span>
+          <h2>Full Entry Details</h2>
+          <p>Complete data profile extracted directly from spreadsheet records.</p>
+        </div>
+        <button class="icon-close" type="button" onclick="closeViewModal()">×</button>
+      </div>
+
+      <div class="view-grid" id="viewDetailsContainer"></div>
+
+      <div class="modal-actions">
+        <button class="glow-btn glow-btn--ghost" type="button" onclick="closeViewModal()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 3: EDIT RECORD -->
+  <div class="modal" id="editModal" aria-hidden="true">
+    <div class="modal-backdrop" onclick="closeEditModal()"></div>
+    <div class="modal-card glass-panel modal-lg">
+      <div class="modal-header">
+        <div>
+          <span class="eyebrow">DATABASE MUTATION</span>
+          <h2>Edit Record Entry</h2>
+          <p>Modify field attributes and sync updates directly to Google Sheets.</p>
+        </div>
+        <button class="icon-close" type="button" onclick="closeEditModal()">×</button>
+      </div>
+
+      <form id="editForm" onsubmit="saveMemberUpdate(event)">
+        <input type="hidden" id="editIdentifier">
+        <input type="hidden" id="editTableName">
+        
+        <div class="edit-grid" id="editFieldsContainer">
+          <!-- Dynamically populated edit input fields -->
+        </div>
+
+        <div class="modal-actions">
+          <button class="glow-btn glow-btn--ghost" type="button" onclick="closeEditModal()">Cancel</button>
+          <button class="glow-btn glow-btn--primary" id="saveEditBtn" type="submit">
+            <span>✓</span> Save Changes
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Dynamic Toast Notification -->
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <span class="toast-icon">✦</span>
+    <span class="toast-message"></span>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
