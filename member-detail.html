@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Document Metadata -->
+    <meta charset="utf-8">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    >
+    <meta
+      name="description"
+      content="SRCC Film & Photography Club cinematic portal."
+    >
+    <meta name="theme-color" content="#040404">
+
+    <!-- Dynamic Page Title -->
+    <title>Member Portal — SRCCFPC</title>
+
+    <!-- Page Styles -->
+    <link rel="stylesheet" href="member-detail.css">
+  </head>
+
+  <body
+    data-page="member-detail" data-protected="true"
+  >
+    <!-- Ambient Background -->
+    <div class="ambient-layer" aria-hidden="true">
+      <span class="ambient-orb ambient-orb--one"></span>
+      <span class="ambient-orb ambient-orb--two"></span>
+      <span class="ambient-orb ambient-orb--three"></span>
+    </div>
+
+<!-- Navigation Start -->
+<header class="site-header">
+  <div class="nav-shell">
+    <a
+      class="brand"
+      href="index.html"
+      aria-label="SRCCFPC Home"
+    ><img src="https://files.catbox.moe/vl3wpi.png" class="club-logo" style="height: 40px; vertical-align: middle; margin-right: 10px;" alt="SRCCFPC logo"><span class="brand-copy"><strong>SRCC</strong><small>Film &amp; Photography Club</small></span></a>
+
+    <!-- Mobile hamburger controller -->
+    <button
+      class="btn nav-toggle"
+      id="navToggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="navDrawer"
+    >
+      MENU
+    </button>
+
+    <!-- Navigation Drawer -->
+    <nav
+      class="nav-drawer"
+      id="navDrawer"
+      aria-label="Primary navigation"
+    >
+      <!-- Public Routes -->
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="about.html">About</a>
+      <a class="nav-link" href="activities.html">Activities</a>
+      <a class="nav-link" href="event.html">Events</a>
+      <a class="nav-link" href="notice.html">Notices</a>
+      <a class="nav-link" href="member.html">Members</a>
+      <a class="nav-link" href="join.html">Join</a>
+      <a class="nav-link" href="drive.html">Drive</a>
+
+      <!-- Protected Member Routes -->
+      <span class="protected-nav">
+        <a class="nav-link admin-nav-link" data-admin-only="true" href="admin.html">
+          Admin Panel
+        </a>
+        <a class="nav-link" href="member-detail.html">
+          Member Portal
+        </a>
+        <a class="nav-link" href="task.html">
+          Tasks
+        </a>
+        <a class="nav-link" href="member-drive.html">
+          Internal Drive
+        </a>
+        <a class="nav-link" href="task-tutorial.html">
+          Tutorials
+        </a>
+        <a class="nav-link" href="log-sheet.html">
+          Log Sheets
+        </a>
+        <a class="nav-link" href="member-notice.html">
+          Member Notices
+        </a>
+        <a class="nav-link" href="interested-panel.html">
+          Interested Panel
+        </a>
+        <a class="nav-link" href="inter-report.html">
+          Reports
+        </a>
+        <a class="nav-link" href="task-received.html">
+          Task Received
+        </a>
+        <a class="nav-link" href="member-event.html">
+          Member Events
+        </a>
+        <a class="nav-link" href="event-join.html">
+          Event Join
+        </a>
+        <a class="nav-link" href="responend.html">
+          Responses
+        </a>
+        <a class="nav-link" href="devices-form.html">
+          Devices
+        </a>
+        <a class="nav-link" href="rejoin-portal.html">
+          Rejoin Portal
+        </a>
+            <a class="nav-link" href="admin.html">
+          Admin Panel
+        </a>
+      </span>
+
+      <!-- Guest State -->
+      <span class="guest-only">
+        <a class="btn" href="login.html">Login</a>
+      </span>
+
+      <!-- Authenticated State -->
+      <span class="welcome-chip">
+        <span class="welcome-avatar">◆</span>
+        <span id="welcomeText">Member</span>
+      </span>
+
+      <button
+        class="nav-action protected-nav"
+        id="logout"
+        type="button"
+      >
+        Logout
+      </button>
+    </nav>
+  </div>
+</header>
+<!-- Navigation End -->
+
+
+    <!-- Main Content -->
+    <main class="page-shell">
+      <section class="hero reveal">
+        <div>
+          <div class="eyebrow">SRCCFPC PRIVATE MEMBER NETWORK</div>
+          <h1 class="hero-title">Member Portal.</h1>
+          <p class="hero-copy">Your profile, account security, and persistent club-wide member chat in one protected workspace.</p>
+        </div>
+      </section>
+
+      <section class="section portal-grid">
+        <article class="glass-card reveal">
+          <div class="glass-content">
+            <div class="eyebrow">IDENTITY</div>
+            <h2 id="memberName">Member</h2>
+            <p class="muted" id="memberMeta">Loading your protected profile...</p>
+            <div class="profile-stat-grid">
+              <div><small>ROLL</small><strong id="memberRoll">—</strong></div>
+              <div><small>USERNAME</small><strong id="memberUsername">—</strong></div>
+              <div><small>EMAIL</small><strong id="memberEmail">—</strong></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="glass-card reveal">
+          <div class="glass-content">
+            <div class="eyebrow">ACCOUNT SECURITY</div>
+            <h2>Settings</h2>
+            <div class="security-stack">
+              <form id="usernameForm" class="security-form">
+                <label>New Username<input id="newUsername" required autocomplete="username"></label>
+                <label>Current Password<div class="password-field"><input id="usernameCurrentPassword" type="password" required><button type="button" class="mini-action" data-toggle-password="usernameCurrentPassword">Show</button></div></label>
+                <button class="glow-btn glow-btn--primary" type="submit">Change Username</button>
+                <small>Username changes are limited by the same 14-day cooldown for every member and admin.</small>
+              </form>
+              <form id="passwordForm" class="security-form">
+                <label>Current Password<div class="password-field"><input id="passwordCurrent" type="password" required><button type="button" class="mini-action" data-toggle-password="passwordCurrent">Show</button></div></label>
+                <label>New Password<div class="password-field"><input id="passwordNew" type="password" required><button type="button" class="mini-action" data-toggle-password="passwordNew">Show</button></div></label>
+                <label>Confirm New Password<div class="password-field"><input id="passwordConfirm" type="password" required><button type="button" class="mini-action" data-toggle-password="passwordConfirm">Show</button></div></label>
+                <button class="glow-btn glow-btn--primary" type="submit">Change Password</button>
+              </form>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="section glass-card chat-shell reveal">
+        <div class="chat-heading">
+          <div><div class="eyebrow">MEMBER NETWORK</div><h2>SRCCFPC Community Chat</h2><p class="muted">Messages are stored in the club database so members can return later and read the conversation history.</p></div>
+          <button class="glow-btn glow-btn--ghost" id="refreshChat" type="button">Refresh</button>
+        </div>
+        <div class="chat-messages" id="chatMessages" aria-live="polite"><div class="chat-empty">Loading conversation history...</div></div>
+        <form id="chatForm" class="chat-composer">
+          <label class="sr-only" for="chatMessage">Message</label>
+          <textarea id="chatMessage" maxlength="2000" placeholder="Write a message to the member community..." required></textarea>
+          <button class="glow-btn glow-btn--primary" id="sendChat" type="submit">Send Message</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- Dynamic Footer -->
+    <footer class="site-footer">
+      SRCC Film &amp; Photography Club <span id="footerYear"></span> | Developed by <a href="https://linktr.ee/fahim.creator.16" target="_blank" rel="noopener noreferrer">Fahim Hassan Apon</a>
+      </a>
+    </footer>
+
+    <!-- Toast Notifications -->
+    <div
+      class="toast"
+      id="toast"
+      role="status"
+      aria-live="polite"
+    ></div>
+
+    <!-- Page JavaScript -->
+    <script src="member-detail.js"></script>
+  </body>
+</html>
